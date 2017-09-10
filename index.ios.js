@@ -19,8 +19,12 @@ export default class OB extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <GDMapView style= {styles.container} showsCompass = {false}></GDMapView>
+          <GDMapView style= {styles.map} showsCompass = {false}>
+          </GDMapView>
+          <View style={styles.controlPanel}>
+          </View>
       </View>
+
     );
   }
 }
@@ -28,19 +32,17 @@ export default class OB extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  map:{
+    position: 'absolute',
+    width:'100%',
+    height:'100%',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  controlPanel:{
+    position: 'absolute',
+    width:'100%',
+    height:'100%',
+    backgroundColor:'rgba(255, 0, 0, 0.5)'
   },
 });
 
