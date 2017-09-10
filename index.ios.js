@@ -17,6 +17,8 @@ import {
   Animated
 } from 'react-native';
 
+import WaypointPanel from './App/waypointpanel';
+
 const GDMapView = requireNativeComponent('GDMapView', null);
 
 const onButtonPress= ()=> {
@@ -45,7 +47,7 @@ export default class OB extends Component {
       this.state.fadeAnim,
       {
         toValue:this.state.currentAlpha,
-        duration:2000,
+        duration:300,
       }
     ).start()
   }
@@ -105,8 +107,11 @@ export default class OB extends Component {
               }
             ]
           }]}>
+            <WaypointPanel style={{
+              flex:1
+            }}></WaypointPanel>
+        </Animated.View>
 
-          </Animated.View>
       </View>
 
     );
@@ -148,7 +153,7 @@ const styles = StyleSheet.create({
     // position: 'absolute',
     width:200,
     height:300,
-    backgroundColor:'rgba(255, 0, 0, 1)',
+    // backgroundColor:'blue',
     marginRight:-200,
     marginTop:-260,
     alignSelf:'flex-end',
